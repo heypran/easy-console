@@ -43,12 +43,15 @@ ec.history(); // log the history on console
 ```
 // to turn off all the logging, enabled by default
 ec.isDebug = false;
+
 // to turn off log saving - silent logs wont work, enabled by default
 ec.isSave = false;
 ```
+
 #### Recommended Usage
 
 - Usage of 'sl' and history feature
+
 ```
 ec.sl("log array of string ", arrS);
 ec.history();
