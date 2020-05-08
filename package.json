@@ -1,0 +1,44 @@
+{
+  "name": "easy-console",
+  "version": "0.0.1",
+  "description": "easy-console makes it very quick to use console logs",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "console",
+    "testing",
+    "debugging",
+    "logger",
+    "nodejs",
+    "typescript"
+  ],
+  "author": "@heypran",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "ts-jest": "^25.5.0",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.8.3"
+  }
+}
