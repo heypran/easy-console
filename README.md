@@ -51,5 +51,5 @@ ec.isSave = false;
 - Usage of 'sl' and history feature
 ```
 ec.sl("log array of string ", arrS);
-ec.history("log array of string ");
+ec.history();
 ```
