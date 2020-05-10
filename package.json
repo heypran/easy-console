@@ -28,7 +28,8 @@
     "debugging",
     "logger",
     "nodejs",
-    "typescript"
+    "typescript",
+    "javscript"
   ],
   "author": "@heypran",
   "license": "MIT",

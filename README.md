@@ -1,5 +1,11 @@
 ## easy-console
 
+Install easy-console as dev dependency.
+
+```
+npm i -D easy-console
+```
+
 Just import the module in your project and start using like a normal console. ( with built in JSON stringify)
 
 Do more with less.
@@ -27,7 +33,7 @@ ec.l('variable value',variable);
 ec.history();
 ```
 
-Dont want to clutter the console with log output, just use silent log feature.
+Don't want to clutter the console with log output, just use silent log feature.
 
 ```
 
@@ -56,3 +62,7 @@ ec.isSave = false;
 ec.sl("log array of string ", arrS);
 ec.history();
 ```
+
+#### Contributions
+
+[Read Guideline](.github/contribution-guide.md)
