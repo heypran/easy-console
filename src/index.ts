@@ -28,13 +28,14 @@ export const econsole: EConsole = (function (realConsole: Console) {
     log(...args: any[]) {
       ++logCount;
       this.saveLog(arguments, "logs");
-      isDebug && realConsole.log.apply(realConsole, arguments as any);
+      const stringify: string[] = this.stringifyArgs(arguments);
+      isDebug && realConsole.log.apply(realConsole, stringify as any);
     },
     // exact copy of log()
     l(...args: any[]) {
       ++logCount;
       this.saveLog(arguments, "logs");
-      isDebug && realConsole.log.apply(realConsole, args as any);
+      isDebug && realConsole.log.apply(realConsole, args as any); // calling the overridden log
     },
     isDebug(bool: boolean) {
       isDebug = bool;
@@ -53,7 +54,10 @@ export const econsole: EConsole = (function (realConsole: Console) {
       if (!isSaveLog) {
         return;
       }
-
+      const stringify: string[] = this.stringifyArgs(args);
+      historyLog[logType].push(stringify.join(" "));
+    },
+    stringifyArgs(args: any): string[] {
       let stringify: string[] = [];
       if (Array.isArray(args)) {
         stringify = args.map((arg: any) => {
@@ -66,8 +70,7 @@ export const econsole: EConsole = (function (realConsole: Console) {
           return args[key];
         });
       }
-
-      historyLog[logType].push(stringify.join(" "));
+      return stringify;
     },
     count() {
       return logCount;

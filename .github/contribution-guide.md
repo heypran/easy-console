@@ -6,5 +6,5 @@ Important: Following these guidelines help to communicate that you respect the t
 
 #### Pull Request
 
-- There is a pull request template, which needs to be filled for any pull request. It will be automatically created once you create a pull request, but you go through it here [PR-template]().
+- There is a pull request template, which needs to be filled for any pull request. It will be automatically created once you create a pull request, but you go through it here [PR-template](./PULL_REQUEST_TEMPLATE.md).
 - Update the [README](../README.md) with details of any new features added, provide examples on how to use the newly added feature.
