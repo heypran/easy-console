@@ -35,7 +35,8 @@ export const econsole: EConsole = (function (realConsole: Console) {
     l(...args: any[]) {
       ++logCount;
       this.saveLog(arguments, "logs");
-      isDebug && realConsole.log.apply(realConsole, args as any); // calling the overridden log
+      const stringify: string[] = this.stringifyArgs(arguments);
+      isDebug && realConsole.log.apply(realConsole, stringify as any);
     },
     isDebug(bool: boolean) {
       isDebug = bool;
